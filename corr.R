@@ -1,6 +1,6 @@
 corr <- function(directory, threshold = 0) {
   
-  corr_values = c()
+  corr_values = vector('numeric')
   
   ## loop through and find complete records afor the selected files
   
@@ -19,10 +19,10 @@ corr <- function(directory, threshold = 0) {
       next
     }
     else {
-      cr <- cor(complete_observations[["sulfate"]], complete_observations[["nitrate"]])
-      names(cr) <- c("corr_val")
-      
-      corr_values <- rbind(corr_values, cr)
+      cr <- cor(complete_observations[["sulfate"]], 
+                complete_observations[["nitrate"]],
+                method="pearson")
+      corr_values <- c(corr_values, cr)
     }
   }
   
