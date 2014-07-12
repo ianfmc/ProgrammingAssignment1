@@ -21,7 +21,8 @@ complete <- function(directory, id = 1:332) {
                                         nobs=nrow(complete_observations)))
   }
   
-  ## find and print the mean of the selected pollutant 
+  ## find and print number of complete observations
+  ## for the selected files
   
   complete_values
 }
