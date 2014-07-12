@@ -18,7 +18,8 @@ pollutantmean <- function(directory, pollutant, id=1:332) {
       ## and the selected pollutant
       
       for (i in id) {
-        filename <- paste(directory, sprintf("%03d", i), sep="")
+        filename <- paste(directory, "/", sep="")
+        filename <- paste(filename, sprintf("%03d", i), sep="")
         filename <- paste(filename, ".csv", sep="")
         
         current_values <- read.csv(filename) 
@@ -34,7 +35,8 @@ pollutantmean <- function(directory, pollutant, id=1:332) {
         ## loop through and append all values for the selected files
         ## and the selected pollutant
         
-        filename <- paste(directory, sprintf("%03d", i), sep="")
+        filename <- paste(directory, "/", sep="")
+        filename <- paste(filename, sprintf("%03d", i), sep="")
         filename <- paste(filename, ".csv", sep="")
         
         current_values <- read.csv(filename) 

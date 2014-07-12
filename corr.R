@@ -5,7 +5,8 @@ corr <- function(directory, threshold = 0) {
   ## loop through and find complete records afor the selected files
   
   for (i in 1:332) {
-    filename <- paste(directory, sprintf("%03d", i), sep="")
+    filename <- paste(directory, "/", sep="")
+    filename <- paste(filename, sprintf("%03d", i), sep="")
     filename <- paste(filename, ".csv", sep="")
     
     current_values <- read.csv(filename, colClasses=c("character",

@@ -6,7 +6,8 @@ complete <- function(directory, id = 1:332) {
   ## loop through and find complete records afor the selected files
   
   for (i in id) {
-    filename <- paste(directory, sprintf("%03d", i), sep="")
+    filename <- paste(directory, "/", sep="")
+    filename <- paste(filename, sprintf("%03d", i), sep="")
     filename <- paste(filename, ".csv", sep="")
     
     current_values <- read.csv(filename, colClasses=c("character",
